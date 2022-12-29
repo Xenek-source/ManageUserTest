@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Maps {
     Scanner scan = new Scanner(System.in);
     public Maps[][] plansza = new Maps[3][3];
-    public Maps pole, newPole;
+    public Maps pole;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
     public int pa,pb;
 public Maps(){
@@ -68,6 +68,7 @@ public void movePion(){
     plansza[pa][pb] = pole;
 }
 public void delPion(){
+
     plansza[pa][pb] = null;
 }
 }
