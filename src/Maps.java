@@ -50,25 +50,25 @@ public void refeshMap(String a, String b){
     System.out.println("------------- Aktualna plansza -------------");
     System.out.print("Player 1: " + a);
     drawMaps();
-    System.out.println("Player 1: " + b);
+    System.out.println("Player 2: " + b);
     System.out.println("------------- ---------------- -------------");
 }
 public void movePion(){
     System.out.println("Wybierz piona do ruchu.");
-    System.out.println("A: ");
+    System.out.print("A: ");
     pa = scan.nextInt();
-    System.out.println("B: ");
+    System.out.print("B: ");
     pb = scan.nextInt();
     if(plansza[pa][pb]==null){
-        System.out.println("------------- ------------- -------------");
-        System.out.print("    ###Błąd. Puste pole.");
+        System.out.println("------------- ---------------- -------------");
+        System.out.print("            ###Błąd. Puste pole.");
     } else {
     pole = plansza[pa][pb];
     delPion();
     System.out.println("Gdzie go umieścić?");
-    System.out.println("A: ");
+    System.out.print("A: ");
     pa = scan.nextInt();
-    System.out.println("B: ");
+    System.out.print("B: ");
     pb = scan.nextInt();
     plansza[pa][pb] = pole;
   //  if (((pa==sa+1)||(pa==sa-1))&&((pb==sb+1)||(pb==sb-1))) {
