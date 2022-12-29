@@ -9,7 +9,7 @@ public class Main {
             String player2 = account.getUser2();
         plansza.dodajPionki1();
         plansza.dodajPionki2();
-        System.out.println("Press Y");
+        System.out.println("Press Y to START");
         char d = scan.next().charAt(0);
         while (d=='y') {
             plansza.refeshMap(player1, player2);
