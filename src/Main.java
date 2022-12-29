@@ -5,8 +5,12 @@ public class Main {
         ManageUser account = new ManageUser();
         Maps plansza = new Maps();
         account.addUser();
-        plansza.toMaps(account.getUser1(),account.getUser2());
+        plansza.dodajPionki1();
+        plansza.dodajPionki2();
+        System.out.println();
+        System.out.println("------------- Aktualna plansza -------------");
+        account.getUser1();
         plansza.drawMaps();
-
+        account.getUser2();
     }
 }
