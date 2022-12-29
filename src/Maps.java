@@ -4,7 +4,7 @@ public class Maps {
     public Maps[][] plansza = new Maps[3][3];
     public Maps pole;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
-    public int sa, sb, pa,pb;
+    public int sa, sb, pa,pb, pa2, pb2;
 public Maps(){
 }
 public void dodajPionki1(){
@@ -65,18 +65,20 @@ public void movePion(){
         movePion();
     } else {
     pole = plansza[pa][pb];
-    delPion();
     System.out.println("Gdzie go umieścić?");
     System.out.print("A: ");
-    pa = scan.nextInt();
+    pa2 = scan.nextInt();
     System.out.print("B: ");
-    pb = scan.nextInt();
-    plansza[pa][pb] = pole;
-  //  if (((pa==sa+1)||(pa==sa-1))&&((pb==sb+1)||(pb==sb-1))) {
-  //      pole = poleNowe;}
+    pb2 = scan.nextInt();
+    if(plansza[pa2][pb2] == null){
+    plansza[pa2][pb2] = pole;
+    delPion();
+    }else{
+        System.out.println("            ###Błąd. Błędne pole.");
+        movePion();
     }}
+}
 public void delPion(){
-
     plansza[pa][pb] = null;
 }
 }
