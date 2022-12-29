@@ -63,7 +63,8 @@ public void movePion(){
         System.out.println("------------- ---------------- -------------");
         System.out.println("            ###Błąd. Puste pole.");
         movePion();
-    } else {
+    }
+    else {
     pole = plansza[pa][pb];
     System.out.println("Gdzie go umieścić?");
     System.out.print("A: ");
@@ -73,10 +74,12 @@ public void movePion(){
     if(plansza[pa2][pb2] == null){
     plansza[pa2][pb2] = pole;
     delPion();
-    }else{
+    }
+    else {
         System.out.println("            ###Błąd. Błędne pole.");
         movePion();
-    }}
+    }
+    }
 }
 public void delPion(){
 
