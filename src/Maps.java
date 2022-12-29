@@ -47,7 +47,7 @@ public void drawMaps(){
 public void refeshMap(String a, String b){
     System.out.println();
     System.out.println("------------- Aktualna plansza -------------");
-    System.out.println("Player 1: " + a);
+    System.out.print("Player 1: " + a);
     drawMaps();
     System.out.println("Player 1: " + b);
 }
