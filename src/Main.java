@@ -5,12 +5,10 @@ public class Main {
         ManageUser account = new ManageUser();
         Maps plansza = new Maps();
         account.addUser();
+            String player1 = account.getUser1();
+            String player2 = account.getUser2();
         plansza.dodajPionki1();
         plansza.dodajPionki2();
-        System.out.println();
-        System.out.println("------------- Aktualna plansza -------------");
-        account.getUser1();
-        plansza.drawMaps();
-        account.getUser2();
+        plansza.refeshMap(player1, player2);
     }
 }

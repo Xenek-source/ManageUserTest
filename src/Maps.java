@@ -6,6 +6,7 @@ public class Maps {
     public String user1, user2;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
 
+
 public Maps(){
 }
 public void userAdd(String a,String b){
@@ -51,4 +52,11 @@ public void drawMaps(){
         }
         System.out.println();
     }
+public void refeshMap(String a, String b){
+    System.out.println();
+    System.out.println("------------- Aktualna plansza -------------");
+    System.out.println("Player 1: " + a);
+    drawMaps();
+    System.out.println("Player 1: " + b);
+}
 }

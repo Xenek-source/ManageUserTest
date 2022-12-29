@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class ManageUser {
     Scanner scan = new Scanner(System.in);
-    String[] userTab = new String[2];
-    User user1, user2;
+    public String[] userTab = new String[2];
+    public User user1, user2;
 
     public ManageUser() {
     }
@@ -15,7 +15,6 @@ public class ManageUser {
         userTab[1] = user2.getUser();
     }
     public String getUser1(){
-
         System.out.print(">> Player " + userTab[0]);
         return userTab[0];
     }
