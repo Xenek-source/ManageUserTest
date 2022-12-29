@@ -79,6 +79,7 @@ public void movePion(){
     }}
 }
 public void delPion(){
+
     plansza[pa][pb] = null;
 }
 }
