@@ -1,6 +1,6 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Maps {
-    Scanner scan = new Scanner(System.in);
+//    Scanner scan = new Scanner(System.in);
     public Maps[][] plansza = new Maps[3][3];
     public Maps pole;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
