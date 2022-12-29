@@ -33,11 +33,13 @@ public void drawMaps(){
             System.out.print("               A"+i+" ");
             for(int j=0;j<3;j++){
                 pole = plansza[i][j];
-                if(pole==null){
-                    System.out.print("[ ]");
-                } else {
-                    System.out.print("[x]");
+                if((pole==pion1)||(pole==pion2)||(pole==pion3)){
+                    System.out.print("[O]");
                 }
+                if((pole==pion4)||(pole==pion5)||(pole==pion6)){
+                    System.out.print("[X]");}
+                if(pole==null){
+                    System.out.print("[ ]");}
             }
         }
         System.out.println();
