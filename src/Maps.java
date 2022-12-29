@@ -71,18 +71,25 @@ public void movePion(){
     pa2 = scan.nextInt();
     System.out.print("B: ");
     pb2 = scan.nextInt();
+
     if(plansza[pa2][pb2] == null){
-    plansza[pa2][pb2] = pole;
-    delPion();
+        if(((pa==pa2+1)||(pa==pa2-1)||(pa==pa2))&&((pb==pb2+1)||(pb==pb2-1)||(pb==pb2))){
+            plansza[pa2][pb2] = pole;
+            delPion();
+        }
+        else {
+            System.out.println("------------- ---------------- -------------");
+            System.out.println("            ###Błąd. Za daleko.");
+        }
     }
     else {
-        System.out.println("            ###Błąd. Błędne pole.");
+        System.out.println("------------- ---------------- -------------");
+        System.out.println("            ###Błąd. Zajęte pole.");
         movePion();
     }
     }
 }
 public void delPion(){
-
     plansza[pa][pb] = null;
 }
 }
