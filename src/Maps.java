@@ -4,7 +4,7 @@ public class Maps {
     public Maps[][] plansza = new Maps[3][3];
     public Maps pole;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
-    public int pa,pb;
+    public int sa, sb, pa,pb;
 public Maps(){
 }
 public void dodajPionki1(){
@@ -29,11 +29,11 @@ public void drawMaps(){
     for(int k=0;k<3;k++){
         System.out.print("B"+k+" ");
     }
-        for(int i=0;i<3;i++){
+        for(sa=0;sa<3;sa++){
             System.out.println();
-            System.out.print("               A"+i+" ");
-            for(int j=0;j<3;j++){
-                pole = plansza[i][j];
+            System.out.print("               A"+sa+" ");
+            for(sb=0;sb<3;sb++){
+                pole = plansza[sa][sb];
                 if((pole==pion1)||(pole==pion2)||(pole==pion3)){
                     System.out.print("[O]");
                 }
@@ -51,6 +51,7 @@ public void refeshMap(String a, String b){
     System.out.print("Player 1: " + a);
     drawMaps();
     System.out.println("Player 1: " + b);
+    System.out.println("------------- ---------------- -------------");
 }
 public void movePion(){
     System.out.println("Wybierz piona do ruchu.");
@@ -58,6 +59,10 @@ public void movePion(){
     pa = scan.nextInt();
     System.out.println("B: ");
     pb = scan.nextInt();
+    if(plansza[pa][pb]==null){
+        System.out.println("------------- ------------- -------------");
+        System.out.print("    ###Błąd. Puste pole.");
+    } else {
     pole = plansza[pa][pb];
     delPion();
     System.out.println("Gdzie go umieścić?");
@@ -66,7 +71,9 @@ public void movePion(){
     System.out.println("B: ");
     pb = scan.nextInt();
     plansza[pa][pb] = pole;
-}
+  //  if (((pa==sa+1)||(pa==sa-1))&&((pb==sb+1)||(pb==sb-1))) {
+  //      pole = poleNowe;}
+    }}
 public void delPion(){
 
     plansza[pa][pb] = null;
