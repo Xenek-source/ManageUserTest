@@ -61,7 +61,8 @@ public void movePion(){
     pb = scan.nextInt();
     if(plansza[pa][pb]==null){
         System.out.println("------------- ---------------- -------------");
-        System.out.print("            ###Błąd. Puste pole.");
+        System.out.println("            ###Błąd. Puste pole.");
+        movePion();
     } else {
     pole = plansza[pa][pb];
     delPion();
