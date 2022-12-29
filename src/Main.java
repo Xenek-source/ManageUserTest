@@ -1,7 +1,7 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-      //  Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         ManageUser account = new ManageUser();
         Maps plansza = new Maps();
         account.addUser();
@@ -9,6 +9,11 @@ public class Main {
             String player2 = account.getUser2();
         plansza.dodajPionki1();
         plansza.dodajPionki2();
-        plansza.refeshMap(player1, player2);
+        System.out.println("Press Y");
+        char d = scan.next().charAt(0);
+        while (d=='y') {
+            plansza.refeshMap(player1, player2);
+            plansza.movePion();
+        }
     }
 }

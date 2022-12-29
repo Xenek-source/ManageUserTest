@@ -1,9 +1,10 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 public class Maps {
-//    Scanner scan = new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
     public Maps[][] plansza = new Maps[3][3];
-    public Maps pole;
+    public Maps pole, newPole;
     public Maps pion1, pion2, pion3, pion4, pion5, pion6;
+    public int pa,pb;
 public Maps(){
 }
 public void dodajPionki1(){
@@ -26,7 +27,7 @@ public void drawMaps(){
     System.out.println();
     System.out.print("                   ");
     for(int k=0;k<3;k++){
-        System.out.print("A"+k+" ");
+        System.out.print("B"+k+" ");
     }
         for(int i=0;i<3;i++){
             System.out.println();
@@ -50,5 +51,23 @@ public void refeshMap(String a, String b){
     System.out.print("Player 1: " + a);
     drawMaps();
     System.out.println("Player 1: " + b);
+}
+public void movePion(){
+    System.out.println("Wybierz piona do ruchu.");
+    System.out.println("A: ");
+    pa = scan.nextInt();
+    System.out.println("B: ");
+    pb = scan.nextInt();
+    pole = plansza[pa][pb];
+    delPion();
+    System.out.println("Gdzie go umieścić?");
+    System.out.println("A: ");
+    pa = scan.nextInt();
+    System.out.println("B: ");
+    pb = scan.nextInt();
+    plansza[pa][pb] = pole;
+}
+public void delPion(){
+    plansza[pa][pb] = null;
 }
 }
