@@ -13,7 +13,8 @@ public class Main {
         char d = scan.next().charAt(0);
         while (d=='y') {
             plansza.refeshMap(player1, player2);
-            plansza.movePion();
+            plansza.movePionPlayer1();
+            plansza.movePionPlayer2();
         }
     }
 }
