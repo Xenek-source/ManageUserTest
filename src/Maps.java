@@ -29,20 +29,22 @@ public void drawMaps(){
     for(int k=0;k<3;k++){
         System.out.print("B"+k+" ");
     }
-        for(sa=0;sa<3;sa++){
-            System.out.println();
-            System.out.print("               A"+sa+" ");
-            for(sb=0;sb<3;sb++){
-                pole = plansza[sa][sb];
-                if((pole==pion1)||(pole==pion2)||(pole==pion3)){
-                    System.out.print("[O]");
+            for (sa = 0; sa < plansza.length; sa++) {
+                System.out.println();
+                System.out.print("               A" + sa + " ");
+                for (sb = 0; sb < plansza.length; sb++) {
+                    pole = plansza[sa][sb];
+                    if ((pole == pion1) || (pole == pion2) || (pole == pion3)) {
+                        System.out.print("[O]");
+                    }
+                    if ((pole == pion4) || (pole == pion5) || (pole == pion6)) {
+                        System.out.print("[X]");
+                    }
+                    if (pole == null) {
+                        System.out.print("[ ]");
+                    }
                 }
-                if((pole==pion4)||(pole==pion5)||(pole==pion6)){
-                    System.out.print("[X]");}
-                if(pole==null){
-                    System.out.print("[ ]");}
             }
-        }
         System.out.println();
     }
 public void refeshMap(String a, String b){
@@ -53,43 +55,51 @@ public void refeshMap(String a, String b){
     System.out.println("Player 2: " + b);
     System.out.println("------------- ---------------- -------------");
 }
-public void movePion(){
+public void movePion() {
     System.out.println("Wybierz piona do ruchu.");
     System.out.print("A: ");
     pa = scan.nextInt();
     System.out.print("B: ");
     pb = scan.nextInt();
-    if(plansza[pa][pb]==null){
-        System.out.println("------------- ---------------- -------------");
-        System.out.println("            ###Błąd. Puste pole.");
-        movePion();
-    }
-    else {
-    pole = plansza[pa][pb];
-    System.out.println("Gdzie go umieścić?");
-    System.out.print("A: ");
-    pa2 = scan.nextInt();
-    System.out.print("B: ");
-    pb2 = scan.nextInt();
-
-    if(plansza[pa2][pb2] == null){
-        if(((pa==pa2+1)||(pa==pa2-1)||(pa==pa2))&&((pb==pb2+1)||(pb==pb2-1)||(pb==pb2))){
-            plansza[pa2][pb2] = pole;
-            delPion();
-        }
-        else {
+    if ((pa < plansza.length) && (pb < plansza.length)) {
+        if (plansza[pa][pb] == null) {
             System.out.println("------------- ---------------- -------------");
-            System.out.println("            ###Błąd. Za daleko.");
+            System.out.println("            ###Błąd. Puste pole.");
+            movePion();
+        } else {
+            pole = plansza[pa][pb];
+            System.out.println("Gdzie go umieścić?");
+            System.out.print("A: ");
+            pa2 = scan.nextInt();
+            System.out.print("B: ");
+            pb2 = scan.nextInt();
+            if ((pa2 < plansza.length) && (pb2 < plansza.length)) {
+                if (plansza[pa2][pb2] == null) {
+                    if (((pa == pa2 + 1) || (pa == pa2 - 1) || (pa == pa2)) && ((pb == pb2 + 1) || (pb == pb2 - 1) || (pb == pb2))) {
+                        plansza[pa2][pb2] = pole;
+                        delPion();
+                    } else {
+                        System.out.println("------------- ---------------- -------------");
+                        System.out.println("            ###Błąd. Za daleko.");
+                    }
+                } else {
+                    System.out.println("------------- ---------------- -------------");
+                    System.out.println("            ###Błąd. Zajęte pole.");
+                    movePion();
+                }
+            } else {
+                System.out.println("------------- ---------------- -------------");
+                System.out.println("        ###Błąd. Wykraczasz za plansze.");
+            }
         }
     }
     else {
         System.out.println("------------- ---------------- -------------");
-        System.out.println("            ###Błąd. Zajęte pole.");
-        movePion();
-    }
+        System.out.println("        ###Błąd. Wykraczasz za plansze.");
     }
 }
 public void delPion(){
+
     plansza[pa][pb] = null;
 }
 }
