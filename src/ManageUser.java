@@ -20,8 +20,4 @@ public class ManageUser {
     public String getUser2(){
         return userTab[1];
     }
-    public User getUser(){
-        User p1=user1;
-        return p1;
-    }
 }
