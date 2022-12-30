@@ -91,7 +91,9 @@ public void movePionPlayer1() {
                             System.out.println("            ###Błąd. Za daleko.");
                             movePionPlayer1();
                         }
-                    } else {
+                    }
+                    //////
+                    else {
                         System.out.println();
                         System.out.println("------------- ---------------- -------------");
                         System.out.println("            ###Błąd. Zajęte pole.");
