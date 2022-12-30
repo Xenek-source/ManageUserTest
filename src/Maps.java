@@ -106,7 +106,7 @@ public void movePionPlayer1() {
             } else {
                 System.out.println();
                 System.out.println("------------- ---------------- -------------");
-                System.out.println("        ###Błąd. Teraz tura "+ player1);
+                System.out.println("      ###Błąd. To nie Twój pionek!");
                 movePionPlayer1();
             }
         }
@@ -169,7 +169,7 @@ public void movePionPlayer2() {
                 } else {
                     System.out.println();
                     System.out.println("------------- ---------------- -------------");
-                    System.out.println("        ###Błąd. Teraz tura "+ player2);
+                    System.out.println("      ###Błąd. To nie Twój pionek!");
                     movePionPlayer2();
                 }
             }
